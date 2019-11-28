@@ -33,6 +33,6 @@ Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 ----
 
 SweetAlert2
-
+https://sweetalert2.github.io
 ```
 From LICENSE ([view file](https://glitch.com/edit/#!/quizcard?path=LICENSE))
