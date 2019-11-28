@@ -19,7 +19,7 @@
         <blockquote>
           <h2 style="font-size:24pt;">Quizlet + Paper flashcards = Quizcard ✨</h2>
           <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we'll provide you with printable flashcards and our foldable paper version of Quizlet. You'll need a printer that supports two-sided printing.</p><br/>
-          <input type="text" placeholder="Link goes here" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button>Print 🖨️</button>
+          <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Print 🖨️</button>
           <br/>
         </blockquote>
         <p style="font-size:18pt;">A lot of people use a great learning tool called Quizlet. What makes Quizlet so great is that it shows you questions with almost perfect timing based on the amount of time it takes for you to forget something.</p>
@@ -31,6 +31,12 @@
       </footer>
     </section>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous" type="text/javascript"></script>
-    <script type="text/javascript">twemoji.parse(document.body);</script>
+    <script type="text/javascript">
+    twemoji.parse(document.body);
+    function quizcardMagic(){
+      var linktext = document.getElementById("linktext").value
+      var id = linktext.split("/");
+    }
+    </script>
   </body>
 </html>
