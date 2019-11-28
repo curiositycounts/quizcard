@@ -23,6 +23,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Makes uses of Tweemoji (https://twemoji.twitter.com/)
+----
+
+Twemoji
+Copyright 2019 Twitter, Inc and other contributors
+Code licensed under the MIT License: http://opensource.org/licenses/MIT
+Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 ```
 From LICENSE ([view file](https://glitch.com/edit/#!/quizcard?path=LICENSE))
