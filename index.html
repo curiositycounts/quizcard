@@ -26,7 +26,7 @@
         <blockquote>
           <h2 style="font-size:24pt;">Quizlet + Paper flashcards = Quizcard ✨</h2>
           <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we'll provide you with printable flashcards. You'll need a printer that supports two-sided printing. Oh, and some paperclips.</p><br/>
-          <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Print 🖨️</button>
+          <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Get PDF 📄</button>
           <br/>Read <i>before</i> using: <a href="javascript:guide();">🤔 Instructions</a>
           <br/>
         </blockquote>
@@ -50,10 +50,7 @@
       if ((((linktextlist[0] == "https:") || (linktextlist[0] == "http:")) && (linktextlist[2] == "quizlet.com")) && (linktextlist[3] != "")) {
         var setID = linktextlist[3];
         var flashcardURL = "https://quizlet.com/pdfs?setIds=" + setID + "&version=2&settings=paper%3Da4%26type%3Dflash%26duplex%3D1%26flip%3D0%26alpha%3D1%26selectedOnly%3D0%26showImages%3D1%26size%3Dlarge";
-        var potato = window.open(flashcardURL, "", "width=500,height=400");
-        potato.focus();
-        potato.print();
-        potato.setTimeout(potato.close(), 0
+        var potato = window.open(flashcardURL);
       } else {
         console.log("🚫 Nope.");
         Swal.fire({
