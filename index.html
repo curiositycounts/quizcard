@@ -27,7 +27,7 @@
           <h2 style="font-size:24pt;">Quizlet + Paper flashcards = Quizcard ✨</h2>
           <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we'll provide you with printable flashcards. You'll need a printer that supports two-sided printing. Oh, and some paperclips.</p><br/>
           <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Print 🖨️</button>
-          <br/><a href="javascript:guide();">🤔 Instructions</a>
+          <br/>Read <i>before</i> using: <a href="javascript:guide();">🤔 Instructions</a>
           <br/>
         </blockquote>
         <p style="font-size:18pt;">A lot of people use a great learning tool called Quizlet. What makes Quizlet so great is that it shows you questions with almost perfect timing based on the amount of time it takes for you to forget something.</p>
@@ -52,7 +52,6 @@
         var flashcardURL = "https://quizlet.com/pdfs?setIds=" + setID + "&version=2&settings=paper%3Da4%26type%3Dflash%26duplex%3D1%26flip%3D0%26alpha%3D1%26selectedOnly%3D0%26showImages%3D1%26size%3Dlarge";
         var potato = window.open(flashcardURL);
         potato.print();
-        setTimeout(potato.close, 0);
       } else {
         console.log("🚫 Nope.");
         Swal.fire({
@@ -73,13 +72,8 @@
         cancelButtonText: "🤓 Got it"
       }).then((result) => {
         if (result.value == true) {
-          Swal.fire({html: guideStuff, title: "The Quizcard Instruction Manual", showConfirmButton: false});
+          Swal.fire({html: guideStuff, title: "The Quizcard Instruction Manual", showConfirmButton: false, timer: 1500});
           window.print();
-          window.onafterprint = function(){
-            console.log("🖨️ Printing complete.");
-            var k = new Event("keydown");
-            k.key
-          }
         }
       });
       twemoji.parse(document.body);
