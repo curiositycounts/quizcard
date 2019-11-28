@@ -27,7 +27,7 @@
           <h2 style="font-size:24pt;">Quizlet + Paper flashcards = Quizcard ✨</h2>
           <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we'll provide you with printable flashcards. You'll need a printer that supports two-sided printing. Oh, and some paperclips.</p><br/>
           <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Print 🖨️</button>
-          <br/><a href="javascript:guide();">🤔 How do I even use this?</a>
+          <br/><a href="javascript:guide();">🤔 Instructions</a>
           <br/>
         </blockquote>
         <p style="font-size:18pt;">A lot of people use a great learning tool called Quizlet. What makes Quizlet so great is that it shows you questions with almost perfect timing based on the amount of time it takes for you to forget something.</p>
@@ -64,11 +64,19 @@
     }
     function guide() {
       console.log("🤔 Hmm...");
+      var guideStuff = "<b>Setup</b><br/>Cut out the cards.<br/><br/><b>Usage</b><br/>Before each session, put the cards in order (least paperclips to most paperclips). Then, look at a card. Come up with an answer, then flip the card";
       Swal.fire({
-        html: "<b>Setup</b><br/>Cut out the cards.<br/><br/><b>Usage</b>Before each session, shuffle the cards.",
+        html: guideStuff,
         title: "The Quizcard Instruction Manual",
-        confirmButtonText: "Oh, now I understand."
+        confirmButtonText: "🖨️ Print",
+        showCancelButton: true,
+        cancelButtonText: "🤓 Got it"
+      }).then((result) => {
+        if (result.value == true) {
+          Swal.fire({html: guideStuff, title: "The Quizcard Instruction Manual", showConfirmButton: false})
+        }
       });
+      twemoji.parse(document.body);
     }
     </script>
   </body>
