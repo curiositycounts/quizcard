@@ -31,16 +31,26 @@
       </footer>
     </section>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill" type="text/javascript"></script>
     <script type="text/javascript">
     twemoji.parse(document.body);
     function quizcardMagic() {
       var linktext = document.getElementById("linktext").value;
       var linktextlist = linktext.split("/");
-      if (((linktextlist[0] == "https:") || (linktextlist[0] == "http:")) && (linktextlist[2] == "quizlet.com")) {
+      if ((((linktextlist[0] == "https:") || (linktextlist[0] == "http:")) && (linktextlist[2] == "quizlet.com")) && (linktextlist[3] != "")) {
         var setID = linktextlist[3];
         var flashcardURL = "https://quizlet.com/pdfs?setIds=" + setID + "&version=2&settings=paper%3Da4%26type%3Dflash%26duplex%3D1%26flip%3D0%26alpha%3D1%26selectedOnly%3D0%26showImages%3D1%26size%3Dlarge";
-        window.open(flashcardURL);
+        var potato = window.open(flashcardURL);
+        potato.print();
+        setTimeout(potato.close, 0);
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: '<a href>Why do I have this issue?</a>'
+        });
       }
     }
     </script>
