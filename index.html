@@ -30,16 +30,19 @@
         &copy; CuriosityCounts.org. Licensed under the <a href="https://glitch.com/edit/#!/quizcard?path=LICENSE">MIT License</a>. Makes use of <a href="https://twemoji.twitter.com/">Twemoji</a>.
       </footer>
     </section>
-    <iframe src="about:blank" style="visibility:hidden;position:absolute;left:0;top:0;height:0;width:0;border:none;"></iframe>
+    <iframe src="about:blank" style="visibility:hidden;position:absolute;left:0;top:0;height:0;width:0;border:none;" id="printframe"></iframe>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous" type="text/javascript"></script>
     <script type="text/javascript">
     twemoji.parse(document.body);
     function quizcardMagic(){
       var linktext = document.getElementById("linktext").value;
+      var printframe = document.getElementById("printframe");
       var linktextlist = linktext.split("/");
-      var setID = linktextlist[1];
+      if (((linktextlist[0] != "https:") || (linktextlist[0] != "http:")) && (linktextlist[]))
+      var setID = linktextlist[3];
       var flashcardURL = "https://quizlet.com/pdfs?setIds=" + setID + "&version=2&settings=paper%3Da4%26type%3Dflash%26duplex%3D1%26flip%3D0%26alpha%3D1%26selectedOnly%3D0%26showImages%3D1%26size%3Dlarge";
-      
+      var printframe.src = flashcardURL;
+      document.getElementById('iframeid').contentWindow.print();
     }
     </script>
   </body>
