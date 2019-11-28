@@ -18,16 +18,16 @@
       <article>
         <blockquote>
           <h2 style="font-size:24pt;">Quizlet + Paper flashcards = Quizcard ✨</h2>
-          <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we'll provide you with printable flashcards and our foldable paper version of Quizlet (in two documents, not all at once). You'll need a printer that supports two-sided printing.</p><br/>
+          <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we"ll provide you with printable flashcards and our foldable paper version of Quizlet (in two documents, not all at once). You"ll need a printer that supports two-sided printing.</p><br/>
           <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Print 🖨️</button>
           <br/>
         </blockquote>
         <p style="font-size:18pt;">A lot of people use a great learning tool called Quizlet. What makes Quizlet so great is that it shows you questions with almost perfect timing based on the amount of time it takes for you to forget something.</p>
-        <p style="font-size:18pt;">Here at CuriosityCounts.org, we ❤️ Quizlet and what they're doing. But we also like paper (for some reason). The result: Quizcard!</p>
+        <p style="font-size:18pt;">Here at CuriosityCounts.org, we ❤️ Quizlet and what they"re doing. But we also like paper (for some reason). The result: Quizcard!</p>
       </article>
       <footer>
         <br/>Quizcard is <b>open source</b>!<br/><a href="https://glitch.com/edit/#!/quizcard">👨‍💻 View source</a> &bull; <a href="https://glitch.com/edit/#!/remix/quizcard">🎏 Remix on Glitch</a><br/>Mirrors: <a href="https://github.com/curiositycounts/quizcard">GitHub</a> &bull; <a href="https://gitlab.com/curiositycounts.org/quizcard">GitLab</a><br/><br/>
-        &copy; CuriosityCounts.org. Licensed under the <a href="https://glitch.com/edit/#!/quizcard?path=LICENSE">MIT License</a>. Makes use of <a href="https://twemoji.twitter.com/">Twemoji</a>.
+        &copy; CuriosityCounts.org. Licensed under the <a href="https://glitch.com/edit/#!/quizcard?path=LICENSE">MIT License</a>. Makes use of <a href="https://twemoji.twitter.com/">Twemoji</a> and <a href="https://sweetalert2.github.io/">SweetAlert2</a>.
       </footer>
     </section>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous" type="text/javascript"></script>
@@ -46,10 +46,9 @@
         setTimeout(potato.close, 0);
       } else {
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong!',
-          footer: '<a href>Why do I have this issue?</a>'
+          text: "Try again?",
+          imageUrl: "https://cdn.glitch.com/47b3491b-746a-4209-8122-9dc1a64be1d4%2Frsz_somethings_wrong_i_can_feel_it.jpg?v=1574961509922",
+          confirmButtonText: "Okay"
         });
       }
     }
