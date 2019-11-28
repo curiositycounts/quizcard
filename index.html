@@ -64,7 +64,7 @@
     }
     function guide() {
       console.log("🤔 Hmm...");
-      var guideStuff = "<b>Setup</b><br/>Cut out the cards.<br/><br/><b>Usage</b><br/>Before each session, put the cards in order (least paperclips to most paperclips). Then, look at a card. Come up with an answer, then flip the card";
+      var guideStuff = "<b>Setup</b><br/>Cut out the cards.<br/><br/><b>Usage</b><br/>Before each session, put the cards in order (least paperclips to most paperclips). Then, look at a card. Come up with an answer, then flip the card and check your answer. Correct? Add a paperclip. Incorrect? Pull all of the paperclips off. If there are 4 paperclips, do nothing.";
       Swal.fire({
         html: guideStuff,
         title: "The Quizcard Instruction Manual",
@@ -73,7 +73,13 @@
         cancelButtonText: "🤓 Got it"
       }).then((result) => {
         if (result.value == true) {
-          Swal.fire({html: guideStuff, title: "The Quizcard Instruction Manual", showConfirmButton: false})
+          Swal.fire({html: guideStuff, title: "The Quizcard Instruction Manual", showConfirmButton: false});
+          window.print();
+          window.onafterprint = function(){
+            console.log("🖨️ Printing complete.");
+            var k = new Event("keydown");
+            k.key
+          }
         }
       });
       twemoji.parse(document.body);
