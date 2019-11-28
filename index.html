@@ -15,12 +15,19 @@
           <img src="https://cdn.glitch.com/47b3491b-746a-4209-8122-9dc1a64be1d4%2FQuizcard%20Logo.png?v=1574950752792" alt="Quizcard" style="max-height:100px;user-drag:none;user-select:none;-moz-user-select:none;-webkit-user-drag:none;-webkit-user-select:none;-ms-user-select:none;" draggable="false">
         </figure>
       </header>
+      <noscript>
+        <article>
+          <h3>🚫 We have a problem.</h3>
+          JavaScript is not enabled, but is required for Quizcard to function.
+          <br/>
+        </article>
+      </noscript>
       <article>
         <blockquote>
           <h2 style="font-size:24pt;">Quizlet + Paper flashcards = Quizcard ✨</h2>
-          <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we"ll provide you with printable flashcards. You'll need a printer that supports two-sided printing. Oh, and some paperclips.</p><br/>
+          <p style="font-size:18pt;">Simply paste in a link to a Quizlet set below and we'll provide you with printable flashcards. You'll need a printer that supports two-sided printing. Oh, and some paperclips.</p><br/>
           <input type="text" id="linktext" placeholder="Link goes here" value="" style="border-top:none;border-left:none;border-right:none;border-radius:0;"/><button onclick="quizcardMagic();">Print 🖨️</button>
-          <br/><a href="">🤔 How do I even use this?</a>
+          <br/><a href="javascript://iamconfusedpleasehelpme" onclick="">🤔 How do I even use this?</a>
           <br/>
         </blockquote>
         <p style="font-size:18pt;">A lot of people use a great learning tool called Quizlet. What makes Quizlet so great is that it shows you questions with almost perfect timing based on the amount of time it takes for you to forget something.</p>
@@ -37,6 +44,7 @@
     <script type="text/javascript">
     twemoji.parse(document.body);
     function quizcardMagic() {
+      console.log("✨ Abracadabra!");
       var linktext = document.getElementById("linktext").value;
       var linktextlist = linktext.split("/");
       if ((((linktextlist[0] == "https:") || (linktextlist[0] == "http:")) && (linktextlist[2] == "quizlet.com")) && (linktextlist[3] != "")) {
@@ -46,12 +54,21 @@
         potato.print();
         setTimeout(potato.close, 0);
       } else {
+        console.log("🚫 Nope.");
         Swal.fire({
           text: "Try again?",
           imageUrl: "https://cdn.glitch.com/47b3491b-746a-4209-8122-9dc1a64be1d4%2Frsz_somethings_wrong_i_can_feel_it.jpg?v=1574961509922",
           confirmButtonText: "Okay"
         });
       }
+    }
+    function pleaseHelpMeIAmFallingOffACliff() {
+      console.log("🤔 Hmm...");
+      Swal.fire({
+        text: "Try again?",
+        title: "The Quizcard Instruction Manual"
+        confirmButtonText: ""
+      });
     }
     </script>
   </body>
